@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#main{ width: 300px; height: 280px; background-color: black;}
+		input{ width: 20%; height: 40px; font-size: 20px; margin: 6px;}
+		#e{ width: 94%; height: 50px; background-color: silver; }
+	</style>
+</head>
+<body>
+	<div id="main">
+		<form name="f">
+			<input type="text" name="c" placeholder="0" id="e">
+			<br>
+			<input type="button" value="1" onclick="f.c.value+=1">
+			<input type="button" value="2" onclick="f.c.value+=2">
+			<input type="button" value="3" onclick="f.c.value+=3">
+			<input type="button" value="+" onclick="add()">
+			<br>
+			<input type="button" value="4" onclick="f.c.value+=4">
+			<input type="button" value="5" onclick="f.c.value+=5">
+			<input type="button" value="6" onclick="f.c.value+=6">
+			<input type="button" value="-" onclick="sub()">
+			<br>
+			<input type="button" value="7" onclick="f.c.value+=7">
+			<input type="button" value="8" onclick="f.c.value+=8">
+			<input type="button" value="9" onclick="f.c.value+=9">
+			<input type="button" value="/" onclick="di()">
+			<br>
+			<input type="button" value="C" onclick="f.c.value=''">
+			<input type="button" value="0" onclick="f.c.value+=0">
+			<input type="button" value="=" onclick="f.c.value=eval(f.c.value)">
+			<input type="button" value="x" onclick="mul()">
+			<br>
+		</form>
+	</div>
+	<script type="text/javascript">
+		function add() {
+			var a1 = 0, b1 = 0;
+			a1 = f.c.value;
+			b1 = a1.charAt(a1.length-1);
+			if(b1 == '+' || b1 == '-' || b1 == '/' || b1 == '*'){
+				f.c.value = a1.substring(0,a1.length-1);
+				f.c.value+='+';
+			}
+			else{
+				f.c.value+='+';
+			}
+		}
+		function sub() {
+			var a1 = 0, b1 = 0;
+			a1 = f.c.value;
+			b1 = a1.charAt(a1.length-1);
+			if(b1 == '+' || b1 == '-' || b1 == '/' || b1 == '*'){
+				f.c.value = a1.substring(0,a1.length-1);
+				f.c.value+='-';
+			}
+			else{
+				f.c.value+='-';
+			}
+		}
+		function di() {
+			var a1 = 0, b1 = 0;
+			a1 = f.c.value;
+			b1 = a1.charAt(a1.length-1);
+			if(b1 == '+' || b1 == '-' || b1 == '/' || b1 == '*'){
+				f.c.value = a1.substring(0,a1.length-1);
+				f.c.value+='/';
+			}
+			else{
+				f.c.value+='/';
+			}
+		}
+		function mul() {
+			var a1 = 0, b1 = 0;
+			a1 = f.c.value;
+			b1 = a1.charAt(a1.length-1);
+			if(b1 == '+' || b1 == '-' || b1 == '/' || b1 == '*'){
+				f.c.value = a1.substring(0,a1.length-1);
+				f.c.value+='*';
+			}
+			else{
+				f.c.value+='*';
+			}
+		}
+
+	</script>
+</body>
+</html>
